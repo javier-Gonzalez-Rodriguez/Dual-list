@@ -33,31 +33,31 @@ Este repositorio contiene un componente de lista dual (dual-list) que permite se
 ---
 
 ## **Vista de la interfaz principal**
-![Interfaz principal](./images/funcionamiento1.png)  
+![Interfaz principal](./images/funcionamiento1.PNG)  
 Esta es la interfaz principal del componente. Está diseñada para ser clara y funcional, mostrando dos listas (disponibles y seleccionados) y botones para interactuar con ellas.
 
 ---
 
 ## **Selección de elementos**
-![Selección de elementos](./images/funcionamiento2.png)  
+![Selección de elementos](./images/funcionamiento2.PNG)  
 Los usuarios pueden seleccionar uno o varios elementos de la lista A. Esta funcionalidad permite elegir con precisión los elementos que se desean mover.
 
 ---
 
 ## **Añadir elementos a la lista B**
-![Añadir elementos a la lista B](./images/funcionamiento3.png)  
+![Añadir elementos a la lista B](./images/funcionamiento3.PNG)  
 Los elementos seleccionados en la lista A pueden ser añadidos a la lista B con los botones de acción. Esto permite gestionar los elementos de manera organizada.
 
 ---
 
 ## **Selección en la lista B**
-![Selección en lista B](./images/funcionamiento4.png)  
+![Selección en lista B](./images/funcionamiento4.PNG)  
 En la lista B, también se pueden seleccionar uno o varios elementos, lo que permite realizar acciones adicionales como moverlos o reorganizarlos.
 
 ---
 
 ## **Ordenar elementos en la lista B**
-![Ordenar elementos](./images/funcionamiento5.png)  
+![Ordenar elementos](./images/funcionamiento5.PNG)  
 Los elementos seleccionados en la lista B se pueden ordenar fácilmente utilizando los botones de movimiento. Esto asegura un control completo sobre el orden de los elementos.
 
 ---
