@@ -10,8 +10,8 @@ Este repositorio contiene un componente de lista dual (dual-list) que permite se
 
 ## Instalación
 
-1. Clona el repositorio
-2. Añade el componente vue a tu punto de montaje para integrar el elemento
+1. Clona el repositorio.
+2. Añade el componente vue a tu punto de montaje vue para integrar el elemento.
 
 
 ## Configuración
@@ -22,7 +22,7 @@ Este repositorio contiene un componente de lista dual (dual-list) que permite se
 3. Los datos basicos para que el componente funcione seria el siguiente:
 
 ```
-    <dual-list :elements="elementsAvalibles"></dual-list>
+<dual-list :elements="elementsAvalibles"></dual-list>
 ```
 
 4. Es posible personalizar los textos de los titulos de cada lista de la siguiente manera
