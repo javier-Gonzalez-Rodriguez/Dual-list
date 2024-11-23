@@ -31,6 +31,22 @@ Este repositorio contiene un componente de lista dual (dual-list) que permite se
 <dual-list :elements="elementsAvalibles" :tituloDisponibes="'Elementos disponibles'" :tituloSeleccionados="'Elementos Agregados'"></dual-list>
 ```
 
+5. En estos ejemplos se ha usado un template basico para mostar datos este quedaría:
+```
+<template v-slot="{ element }">
+    <div>
+        Nombre: {{ element.nombre }}
+    </div>
+    <div>
+        Edad: {{ element.edad }}
+        Sexo: {{ element.sexo }}
+        Seleccionado: {{ element.selected }}
+    </div>
+</template>
+```
+
+6. Es necesario que el template integre **v-slot"{ element }"** para usar los datos de los JSON
+
 ## Cómo funciona
 
 ---
