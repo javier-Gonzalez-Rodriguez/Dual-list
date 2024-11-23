@@ -142,7 +142,6 @@
                         break;
                     case 'up':
                         var idxList = [];
-                        debugger;
                         this.selectedItems.forEach((object, idx) => {
                             if(object.selected && idx > 0){
                                 idxList.push(idx);
@@ -152,11 +151,18 @@
                         });
 
                         var jumps = 1;
+                        var lasIdx = -1;
                         for(var i = 0; i < idxList.length; i++){
+                            if(lasIdx == -1){
+                                lasIdx = idxList[i];
+                            }
                             var object = this.selectedItems.splice([idxList[i]], 1);
 
                             this.selectedItems.splice(idxList[i] - jumps, 0, object[0]);
-                            jumps++;
+                            
+                            if(this.lasIdx < idxList[i]){
+                                jumps++;
+                            }
                         }
                         break;
                     case 'down':
@@ -281,21 +287,22 @@
         flex-direction: column;
 	}
 
-	.list-container-buttons div button{
-        background-color: #f4f4f4;
+	.list-container-buttons button{
+        background-color: #007BFF;
         border: none;
         padding: 10px;
         cursor: pointer;
         transition: background-color 0.3s ease;
         margin-bottom: 10px; /* Añade espacio entre los botones */
-
+        min-width: 46px;
+        min-height: 46px;
         /*
 		max-width: 53px;
-		animation: pulse 1.5s infinite; /* Animación de pulsación 
         */
+		animation: pulse 1.5s infinite; /* Animación de pulsación */
 	}
 
-	.list-container-buttons div button:hover {
+	.list-container-buttons button:hover {
 	    transform: scale(1.05); /* Incremento en el tamaño al pasar el cursor */
 	}
 
