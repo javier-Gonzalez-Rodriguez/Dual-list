@@ -20,7 +20,6 @@
         </div>
         <!-- Botones para mover los elementos de una tabla a otra -->
         <div class="list-container-buttons">
-            <div>
                 <button @click="moveToTarget('addSimp')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M6 4L14 10L6 16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,7 +42,6 @@
                         <path d="M14 4L6 10L14 16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-            </div>
         </div>
 
         <!-- Lista de elementos seleccionados -->
@@ -59,7 +57,6 @@
         </div>
         <!-- Botones para ordenar los elementos de la lista de elementos seleccionados -->
         <div class="list-container-buttons">
-            <div>
                 <button @click="moveToTarget('up')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M4 14L10 6L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -70,7 +67,6 @@
                         <path d="M4 6L10 14L16 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-            </div>
         </div>
     </div>
 </template>
@@ -212,22 +208,39 @@
 <style>
     .dual-list-container {
         display: flex;
-        min-width: 800x;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+        flex-direction: row;
+        /*
+        display: flex;
+        height: 100%;
+        */
     }
 
     .list-container {
+        width: 48%; /* Toma el 48% del espacio, dejando margen */
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column; /* Esto hace que los elementos dentro de .list-container estén en columnas */
+
+        /*
 		margin-right: 20px;
 		vertical-align: top;
         display: flex;
-        max-height: 600px;
         flex-direction: column;
-        min-height: 600px;
         width: 100%;
+        padding-bottom: 20px;
+        */
+        height: 100%;
 	}
 
 	button {
 		display: block;
 		margin-top: 10px;
+        min-width: none;
 	}
 
 	/* Estilos para dar apariencia de tarjeta a las etiquetas h3 */
@@ -246,23 +259,40 @@
 	}
 
 	.list-container-buttons {
-		display: inline-block;
+        
+        display: flex;
+        flex-direction: column; /* Esto hace que los botones estén en columnas */
+        align-items: center; /* Alinea los botones al centro */
+        margin-top: 20px;
+        /*
+		display: flex;
 		margin-right: 20px;
-		vertical-align: top;
         margin-left: 10px;
+        flex-direction: column;
+        */
+        justify-content: center;
+
 	}
 
 	.list-container-buttons div{
         display: flex;               /* Habilitar Flexbox */
         justify-content: center;     /* Centrar horizontalmente */
         align-items: center;         /* Centrar verticalmente */
-        /*height: 70%;               /* Altura del contenedor */
         flex-direction: column;
 	}
 
 	.list-container-buttons div button{
+        background-color: #f4f4f4;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: 10px; /* Añade espacio entre los botones */
+
+        /*
 		max-width: 53px;
-		animation: pulse 1.5s infinite; /* Animación de pulsación */
+		animation: pulse 1.5s infinite; /* Animación de pulsación 
+        */
 	}
 
 	.list-container-buttons div button:hover {
@@ -283,14 +313,24 @@
 	}
 
 	.selectable-list {
+        margin-top: 10px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column; /* Los elementos dentro de la lista estarán en columnas */
+
+        /*
         display: flex;
         flex-direction: column;
+        padding: 10px;        
+        overflow-y: auto;
+        */
+        
         border: 2px solid #8b8b8b;
         border-radius: 8px;
-        padding: 10px;
         background-color: #f9f9f9;
-        min-height: 600px;
-        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+
 	}
 
 	.selectable-item-selected {
@@ -298,18 +338,27 @@
 	}
 
 	.selectable-item {
-		padding: 10px;
+		
+        padding: 10px;
+        margin: 5px 0;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+
+        /*
+        padding: 10px;
 		margin-bottom: 5px;
 		background-color: #fff;
 		border-radius: 6px;
 		cursor: pointer;
-		transition: background-color 0.3s, transform 0.2s;
 		display: flex;
 		flex-direction: row;
 		column-gap: 20px;
+        */
+        transition: background-color 0.3s, transform 0.2s;
 		font-weight: bold;
-		/*height: 60px;
-		max-height: 60px;*/
+
 	}
 
 	.selectable-item:hover {
