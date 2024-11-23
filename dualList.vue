@@ -81,7 +81,7 @@
                 required: true
             },
             tituloDisponibles: { type: String, default: "Elementos disponibles" },
-            tituloSeleccionados: { type: String, default: "Elementos Agregados" },
+            tituloSeleccionados: { type: String, default: "Elementos agregados" },
         },
         data(){
             return {
